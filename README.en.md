@@ -21,13 +21,13 @@ Search includes user and assistant text. It excludes tool output, injected messa
 
 ## Installation
 
-In DeepSeek Harness, open **Plugins**, choose to add a plugin, and use this GitHub install specification:
+In DeepSeek Harness, open **Plugins**, click the arrow beside **Add plugin**, and choose **Install a third-party plugin**. Paste the following address and click **Install**:
 
 ```text
 github:michaelfeng/dsh-conversation-history#v1.1.0
 ```
 
-Enable both the bundle and its **Conversation History component**. Open a conversation and select **History**.
+After installation, click **Enable now**. Open the plugin details and confirm that both the bundle and its **Conversation History component** are enabled and the component shows **Running**. Open a conversation that already has messages and select **History**; the blank new-session welcome screen does not show conversation tabs.
 
 For a local checkout:
 
@@ -36,7 +36,7 @@ git clone https://github.com/michaelfeng/dsh-conversation-history.git
 cd dsh-conversation-history
 ```
 
-Choose the local-directory option in the Harness plugin menu and select the cloned folder. Alternatively, use the Harness plugin-management tool's `install_bundle` action with the checkout's absolute path as `target`.
+Enter the checkout’s absolute directory path in the same third-party installation dialog. Alternatively, use the Harness plugin-management tool's `install_bundle` action with the checkout's absolute path as `target`.
 
 This is an independent third-party plugin, not an official DeepSeek project. Integration was checked against the desktop plugin interfaces in Harness **0.2.1-rc.3**. Other versions may require changes. The plugin depends on Harness session, connection and UI services; it is not a standalone web app.
 

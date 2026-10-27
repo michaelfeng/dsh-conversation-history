@@ -20,13 +20,13 @@
 
 ## 安装
 
-在 DeepSeek Harness 的 **Plugins / 插件** 页面选择添加插件，使用这个 GitHub 安装地址：
+在 DeepSeek Harness 中打开 **Plugins / 插件**，点击 **Add plugin / 添加插件** 右侧的下拉箭头，选择 **Install a third-party plugin / 安装第三方插件**，粘贴下面的地址并点击 **Install / 安装**：
 
 ```text
 github:michaelfeng/dsh-conversation-history#v1.1.0
 ```
 
-安装后，确认插件和 **Conversation History 组件** 两个开关都已开启。打开任意会话，即可看到 **History / 历史** 标签页。
+安装完成后点击 **Enable now / 立即启用**。在插件详情中确认插件和 **Conversation History 组件** 两个开关都已开启，组件显示 **Running / 运行中**。进入一个已有消息的会话，即可看到 **History / 历史** 标签页；空白的新会话欢迎页不会显示会话标签。
 
 如果需要使用本地源码：
 
@@ -35,7 +35,7 @@ git clone https://github.com/michaelfeng/dsh-conversation-history.git
 cd dsh-conversation-history
 ```
 
-然后在 Harness 的添加插件菜单选择本地目录，指向克隆后的文件夹。也可以通过 Harness 的插件管理工具调用 `install_bundle`，把 `target` 设置为这个目录的绝对路径。
+然后在同一个“安装第三方插件”对话框中填写克隆后文件夹的绝对路径。也可以通过 Harness 的插件管理工具调用 `install_bundle`，把 `target` 设置为这个目录的绝对路径。
 
 本项目是第三方插件，与 DeepSeek 官方无隶属关系。集成验证基于 Harness **0.2.1-rc.3** 的桌面插件接口；其他版本可能需要适配。插件运行需要 Harness 提供的会话、连接和界面服务，不能作为普通网页直接使用。
 

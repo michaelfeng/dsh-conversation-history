@@ -1,0 +1,65 @@
+{
+  "name": "dsh-conversation-history",
+  "version": "1.1.0",
+  "type": "module",
+  "description": "Conversation view that searches chat history across every Session",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "dialogue-index.js",
+    "dialogue.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "docs/images"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-session"
+      ]
+    }
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test tests/client.mjs tests/performance.mjs && node tests/render-smoke.mjs",
+    "check:release": "node scripts/check-release.mjs",
+    "demo": "node scripts/serve-demo.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelfeng/dsh-conversation-history.git"
+  },
+  "homepage": "https://github.com/michaelfeng/dsh-conversation-history#readme",
+  "bugs": {
+    "url": "https://github.com/michaelfeng/dsh-conversation-history/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "dsh-plugin",
+    "conversation-history",
+    "search"
+  ]
+}

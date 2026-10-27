@@ -2,7 +2,7 @@
 
 A **History** tab for DeepSeek Harness. Find something you discussed earlier and read its context without leaving the current view.
 
-[中文](README.md) · [Installation](#installation) · [How-it-works](#how-it-works) · [Development](#development)
+[中文](README.md) · [Installation](#installation) · [Installation verification](#installation-verification) · [How-it-works](#how-it-works) · [Development](#development)
 
 ![Search results with an in-place conversation preview](docs/images/search-en.jpg)
 
@@ -48,6 +48,26 @@ Enter at least two characters, such as `release notes`. Select a message excerpt
 
 Each matching conversation contributes its latest matching message. Results are sorted by that message's timestamp. Responses include up to 100 conversations and indicate truncation. Regular expressions and fuzzy matching are not supported.
 
+## Installation verification
+
+Verified on 2026-10-28 using the Web instance bundled with the DeepSeek Harness **0.2.1-rc.3** desktop distribution on macOS. The instance used a separate temporary `DSH_HOME`; **v1.1.0** was installed from GitHub through the Plugins UI, with no model API key configured.
+
+![Real Harness UI after GitHub installation, searching fictional test conversations](docs/images/github-install-verified.jpg)
+
+*This screenshot was captured after an actual installation. The workspace name, conversation titles and all messages are fictional test data; no personal chat history or credentials are included. The displayed latency is from this small test query, not a performance benchmark.*
+
+| Check | Observed result |
+|---|---|
+| GitHub installation | The README's `github:...#v1.1.0` specification installed successfully; installed runtime files matched the published source |
+| Activation | Bundle and component enabled, component reported Running, and History appeared in a conversation with messages |
+| Restart | The plugin loaded after restarting the temporary Harness instance |
+| Cross-conversation search | Searching `release notes` returned message matches from two fictional conversations |
+| Context preview | Selecting an excerpt displayed user and assistant messages, Markdown headings and lists |
+| Match navigation | Matching phrases were highlighted; Next match advanced the counter from `1/3` to `2/3` |
+| Open conversation | The preview opened the intended conversation with the matching title |
+
+These results cover the version and isolated Web environment above. Other Harness versions and deployment modes were not covered by this installation check.
+
 ## How it works
 
 When the component starts, it begins reading sessions through the public Harness persistence API and saving a disposable projection of dialogue text. Later searches reconcile source revisions and reuse those projections.
@@ -73,7 +93,7 @@ npm run check:release
 
 Tests use fictional fixtures and cover cache reuse, changed/deleted sessions, concurrency, progress polling, timeouts, long messages, highlighting and UI rendering.
 
-To render the static previews used for the screenshots:
+To render the static previews used for the screenshots at the top of the READMEs:
 
 ```sh
 npm run demo

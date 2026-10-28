@@ -4,9 +4,9 @@ A **History** tab for DeepSeek Harness. Find something you discussed earlier and
 
 [中文](README.md) · [Installation](#installation) · [Installation verification](#installation-verification) · [How-it-works](#how-it-works) · [Development](#development)
 
-![Search results with an in-place conversation preview](docs/images/search-en.jpg)
+![Conversation History: cross-conversation search, context preview and keyword highlighting](docs/images/social-preview.jpg)
 
-*Rendered from the actual plugin component. Every conversation, title and message shown is fictional.*
+*The cover is a feature illustration using fictional test data. See Installation verification below for a real installation screenshot.*
 
 ## Features
 
@@ -93,7 +93,7 @@ npm run check:release
 
 Tests use fictional fixtures and cover cache reuse, changed/deleted sessions, concurrency, progress polling, timeouts, long messages, highlighting and UI rendering.
 
-To render the static previews used for the screenshots at the top of the READMEs:
+To render static previews of the plugin UI using fictional data:
 
 ```sh
 npm run demo
